@@ -2,64 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+    public function index(){
+        $categories = Category::all();
+        return view('contact.index',compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function confirm(Request $request)
     {
-        //
+        $contact = $request->only('category_id', 'first_name', 'last_name', 'gender', 'email', 'tel_1', 'tel_2', 'tel_3','address', 'building', 'detail');
+        $contact['tel'] = $contact['tel_1'] . $contact['tel_2'] . $contact['tel_3'];
+        unset($contact['tel_1'], $contact['tel_2'], $contact['tel_3']);
+        session(['contact' => $contact]);
+
+        return redirect()->route('contact.showConfirm');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function showConfirm(Request $request){
+        $contact = session('contact');
+        $genders = [
+            Contact::GENDER_MALE =>'男性',
+            Contact::GENDER_FEMALE => '女性',
+            Contact::GENDER_OTHER => 'その他',
+        ];
+        $category = Category::find($contact['category_id']);
+
+        return view('contact.confirm',compact('contact','genders','category'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Contact $contact)
-    {
-        //
+    public function store(){
+        $contact = session('contact');
+        Contact::create($contact);
+        session()->forget('contact');
+
+        return redirect()->route('contact.thanks');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Contact $contact)
-    {
-        //
+    public function thanks(){
+        return view('contact.thanks');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Contact $contact)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Contact $contact)
-    {
-        //
+    public function back(){
+        $contact = session('contact');
+        return view('contact.index',compact('contact'));
     }
 }

@@ -8,11 +8,11 @@ use Illuminate\Database\Seeder;
 class CategorySeeder extends Seeder{
     public function run(): void {
         $categories = [
-        ['content' => '1.商品のお届けについて',],
-        ['content' => '2.商品の交換について',],
-        ['content' => '3.商品トラブル',],
-        ['content' => '4.ショップへのお問い合わせ',],
-        ['content' => '5.その他',],
+        ['content' => '商品のお届けについて',],
+        ['content' => '商品の交換について',],
+        ['content' => '商品トラブル',],
+        ['content' => 'ショップへのお問い合わせ',],
+        ['content' => 'その他',],
         ];
 
         foreach($categories as $category){
