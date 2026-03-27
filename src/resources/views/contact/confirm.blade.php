@@ -11,7 +11,7 @@
     <table>
         <tr class="table-row">
             <th class="table-title">お名前</th>
-            <td class="table-input">{{ $contact['first_name'] }} {{ $contact['last_name'] }}</td>
+            <td class="table-input">{{ $contact['last_name'] }} {{ $contact['first_name'] }}</td>
         </tr>
         <tr class="table-row">
             <th class="table-title">性別</th>
@@ -23,7 +23,7 @@
         </tr>
         <tr class="table-row">
             <th class="table-title">電話番号</th>
-            <td class="table-input">{{ $contact['tel'] }}</td>
+            <td class="table-input">{{ $tel }}</td>
         </tr>
         <tr class="table-row">
             <th class="table-title">住所</th>
