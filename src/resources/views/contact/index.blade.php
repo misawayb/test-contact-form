@@ -16,9 +16,9 @@
         <div class="contact-input">
             <div class="contact-name">
                 <label for="first_name" class="visually-hidden">姓</label>
-                <input type="text" name="first_name" id="first_name" placeholder="例 山田">
+                <input type="text" name="first_name" id="first_name" value="{{ old('first_name', $contact['first_name'] ?? '') }}" placeholder="例 山田">
                 <label for="last_name" class="visually-hidden">名</label>
-                <input type="text" name="last_name" id="last_name" placeholder="例 太郎">
+                <input type="text" name="last_name" id="last_name" value="{{ old('last_name', $contact['last_name'] ?? '') }}" placeholder="例 太郎">
             </div>
             <p class="error-message"></p>
         </div>
@@ -46,7 +46,7 @@
             <span class="required">※</span>
         </div>
         <div class="contact-input">
-            <input type="email" name="email" id="email" placeholder="test@example.com">
+            <input type="email" name="email" id="email" value="{{ old('email', $contact['email'] ?? '') }}" placeholder="test@example.com">
             <p class="error-message"></p>
         </div>
     </div>
@@ -72,7 +72,7 @@
             <span class="required">※</span>
         </div>
         <div class="contact-input">
-            <input type="text" name="address" id="address" placeholder="例 東京都渋谷区千駄ヶ谷1-2-3">
+            <input type="text" name="address" id="address" value="{{ old('address', $contact['address'] ?? '') }}" placeholder="例 東京都渋谷区千駄ヶ谷1-2-3">
             <p class="error-message"></p>
         </div>
     </div>
@@ -81,7 +81,7 @@
             <label class="contact-title" for="building">建物名</label>
         </div>
         <div class="contact-input">
-            <input type="text" name="building" id="building" placeholder="例 千駄ヶ谷マンション102">
+            <input type="text" name="building" id="building" value="{{ old('building', $contact['building'] ?? '') }}" placeholder="例 千駄ヶ谷マンション102">
             <p class="error-message"></p>
         </div>
     </div>
@@ -94,7 +94,7 @@
             <select class="contact-category" name="category_id" id="category">
                 <option value="" hidden disabled selected>選択してください</option>
                 @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->content }}</option>
+                <option value="{{ $category->id }}">{{ $category->content }}</option>
                 @endforeach
             </select>
             <p class="error-message"></p>

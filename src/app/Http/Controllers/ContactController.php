@@ -49,6 +49,7 @@ class ContactController extends Controller
 
     public function back(){
         $contact = session('contact');
-        return view('contact.index',compact('contact'));
+        $categories = Category::all();
+        return view('contact.index',compact('contact','categories'));
     }
 }
