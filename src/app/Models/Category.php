@@ -8,7 +8,8 @@ class Category extends Model
 {
     protected $fillable = ['content'];
 
-    public function contacts(){
+    public function contact()
+    {
         return $this->hasMany(Contact::class);
     }
 }

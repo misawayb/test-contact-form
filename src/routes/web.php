@@ -17,6 +17,6 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
     Route::get('/search',[AdminController::class,'search'])->name('admin.search');
     Route::get('/reset',[AdminController::class,'reset'])->name('admin.reset');
-    Route::delete('/delete',[AdminController::class,'destroy'])->name('admin.delete');
+    Route::delete('/delete/{contact}',[AdminController::class,'destroy'])->name('admin.delete');
     Route::get('/export',[AdminController::class,'export'])->name('admin.export');
 });

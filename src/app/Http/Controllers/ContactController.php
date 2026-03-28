@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests\ContactRequest;
 use App\Models\Category;
 use App\Models\Contact;
@@ -22,11 +21,7 @@ class ContactController extends Controller
 
     public function showConfirm(){
         $contact = session('contact');
-        $genders = [
-            Contact::GENDER_MALE =>'男性',
-            Contact::GENDER_FEMALE => '女性',
-            Contact::GENDER_OTHER => 'その他',
-        ];
+        $genders = Contact::GENDERS;
         $tel = $contact['tel_1'] . $contact['tel_2'] . $contact['tel_3'];
         $category = Category::find($contact['category_id']);
 
