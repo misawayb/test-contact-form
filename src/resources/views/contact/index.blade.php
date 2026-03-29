@@ -33,12 +33,15 @@
         </div>
         <div class="contact-input">
             <div class="contact-gender">
-                <input type="radio" name="gender" id="gender-male" value="1" @checked(old('gender', $contact['gender'] ?? '' )==1)>
-                <label for="gender-male">男性</label>
-                <input type="radio" name="gender" id="gender-female" value="2" @checked(old('gender', $contact['gender'] ?? '' )==2)>
-                <label for="gender-female">女性</label>
-                <input type="radio" name="gender" id="gender-other" value="3" @checked(old('gender', $contact['gender'] ?? '' )==3 )>
-                <label for="gender-other">その他</label>
+                <label>
+                    <input type="radio" name="gender" value="1" @checked(old('gender', $contact['gender'] ?? '' )==1)>男性
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="2" @checked(old('gender', $contact['gender'] ?? '' )==2)>女性
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="3" @checked(old('gender', $contact['gender'] ?? '' )==3 )>その他
+                </label>
             </div>
             <p class="error-message">@error('gender'){{ $message }}@enderror</p>
         </div>
@@ -89,6 +92,7 @@
         </div>
         <div class="contact-input">
             <input type="text" name="building" id="building" value="{{ old('building', $contact['building'] ?? '') }}" placeholder="例 千駄ヶ谷マンション102">
+            <p class="error-message"></p>
         </div>
     </div>
     <div class="contact-row">
@@ -116,6 +120,18 @@
             <p class="error-message">@error('detail'){{ $message }}@enderror</p>
         </div>
     </div>
-    <button class="confirm">確認画面</button>
+    <button class="confirm-button">確認画面</button>
+    {{-- 選択してくださいの色調整 --}}
+    <script>
+        const select = document.querySelector('.contact-category');
+
+        if (select.value !== '') {
+            select.classList.add('selected');
+        }
+
+        select.addEventListener('change', function() {
+            this.classList.toggle('selected', this.value !== '');
+        });
+    </script>
 </form>
 @endsection

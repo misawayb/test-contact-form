@@ -1,0 +1,53 @@
+.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 50px;
+    border-bottom: 1px solid #baa899;
+}
+
+.header-logo {
+    margin: 0 auto;
+    font-size: 40px;
+    color: #83746b;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+
+/* 全ページ共通 */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #83746b;
+    font-weight: normal;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.header-button {
+    position: absolute;
+    right: 50px;
+    padding: 5px 15px;
+    border: 1px solid #baa899;
+    color: #baa899;
+    background-color: #f1ece6;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', serif;
+    cursor: pointer;
+}
+
+.error-message {
+    width: 100%;
+    color: red;
+    font-size: 12px;
+    margin: 4px 0 0;
+    padding-left: 30px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect (0, 0, 0, 0);
+}

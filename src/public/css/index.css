@@ -1,0 +1,109 @@
+form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-row,
+.contact-input{
+    color: #83746b;
+}
+
+.contact-row{
+    margin: 30px 0;
+    display: flex;
+}
+.contact-label {
+    width: 30%;
+}
+
+.required {
+    color: rgb(250, 58, 100);
+}
+
+.contact-input {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 0;
+}
+
+.contact-input input,
+.contact-input select,
+.contact-input textarea {
+    padding: 8px 30px;
+    color: #83746b;
+    border: none;
+    background-color: #f4f4f4;
+
+}
+
+.contact-input input[type="radio"] {
+    width: auto;
+    background-color: transparent;
+    accent-color: #83746b;
+}
+
+.contact-input input[type="radio"]:focus {
+    outline: 2px solid #ffffff;
+}
+
+.contact-input .contact-category {
+    color: #83746b;
+    opacity: 0.54;
+}
+
+.contact-input .contact-category.selected {
+    opacity: 1;
+}
+
+.contact-input input,
+.contact-input textarea {
+    width: 100%;
+}
+
+.contact-input input[type="radio"] {
+    width: auto;
+}
+
+.name-field {
+    flex: 1;
+}
+
+.name-field input {
+    width: 100%;
+}
+
+.contact-gender{
+    display: flex;
+    gap: 40px;
+}
+.contact-gender input {
+    margin-right: 10px;
+}
+
+.contact-tel {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.tel-input {
+    width: 100%;
+    text-align: center;
+}
+
+.contact-detail {
+    width: 100%;
+    height: 120px;
+}
+
+.confirm-button {
+    display: block;
+    margin: 20px auto 50px;
+    width: 120px;
+    height: 40px;
+    background-color: #83746b;
+    color: #ffffff;
+    border: none;
+}
