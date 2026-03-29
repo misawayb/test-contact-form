@@ -20,7 +20,7 @@
         </div>
         <div class="auth-field">
             <label class="auth-title" for="email">メールアドレス</label>
-            <input class="auth-input" type="email" name="email" value="{{ old('email') }}" placeholder="例 test@example.com">
+            <input class="auth-input" type="text" name="email" value="{{ old('email') }}" placeholder="例 test@example.com">
             <p class="error-message">@error('email'){{ $message }}@enderror</p>
         </div>
         <div class="auth-field">
