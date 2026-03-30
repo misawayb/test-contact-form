@@ -3,7 +3,6 @@ table {
     margin: 30px auto;
 }
 
-table ,
 .table-row {
     border: 1px solid #f1ece6;
 }
@@ -11,7 +10,6 @@ table ,
 .table-row {
     height: 4em;
 }
-
 .table-row:last-child {
     height: 6em;
 }

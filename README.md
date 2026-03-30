@@ -15,7 +15,9 @@
 6. php artisan db:seed
 
 ### 開発環境
-- http://localhost
+- お問い合わせフォーム: http://localhost
+- 管理画面: http://localhost/admin
+- phpMyAdmin: http://localhost:8080/
 
 ### 使用技術（実行環境）
 - PHP 8.4.19

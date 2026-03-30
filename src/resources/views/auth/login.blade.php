@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+管理者ログイン
+@endsection
+
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 @endsection
@@ -10,7 +14,7 @@
 
 @section('content')
 <h1>Login</h1>
-<div class="card-login">
+<div class="auth-card">
     <form action="/login" method="post">
         @csrf
         <div class="auth-field">

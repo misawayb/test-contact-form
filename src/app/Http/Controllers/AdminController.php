@@ -22,7 +22,7 @@ class AdminController extends Controller
             ->when($request->gender, fn($q) => $q->where('gender', $request->gender))
             ->when($request->category_id, fn($q) => $q->where('category_id', $request->category_id))
             ->when($request->date, fn($q) => $q->whereDate('created_at', $request->date))
-            ->simplePaginate(7);
+            ->paginate(7);
         $genders = Contact::GENDERS;
         $categories = Category::all();
 

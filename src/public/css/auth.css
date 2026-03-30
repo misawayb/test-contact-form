@@ -4,21 +4,13 @@ main {
     height: 100vh;
 }
 
-.card-login,
-.card-register {
-    margin: 40px auto 0;
-    padding: 30px 70px;
+.auth-card {
+    margin: 30px auto 0;
     width: 50%;
     background-color: white;
     border: 1px solid #baa899;
     border-radius: 5px;
-}
-
-.card-login {
-    height: 55%;
-}
-.card-register {
-    height: 70%;
+    padding: 40px;
 }
 
 .auth-field {
@@ -28,26 +20,24 @@ main {
     margin: 0 auto 20px;
     color: #83746b;
 }
+.auth-field input {
+    height: 2.5em;
+    padding-left: 20px;
+    background-color: #f4f4f4;
+    border: none;
+}
 
 .auth-title {
     margin-bottom: 5px;
 }
 
-.auth-field input {
-    background-color: #f4f4f4;
-    border: none;
-    height: 2.5em;
-    padding-left: 20px;
-
-}
-
 .auth-button {
     display: block;
-    margin: 30px auto;
     width: 120px;
     height: 40px;
+    margin: 30px auto;
     background-color: #83746b;
-    color: #ffffff;
     border: none;
+    color: #ffffff;
     cursor: pointer;
 }

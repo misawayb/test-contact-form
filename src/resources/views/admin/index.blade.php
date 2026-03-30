@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+管理画面
+@endsection
+
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 @endsection
@@ -46,7 +50,7 @@
         {{ $contacts->links('vendor.pagination.tailwind') }}
     </nav>
 </div>
-<table>
+<table class="admin-table">
     <tr class="table-title">
         <th class="admin-table-header">お名前</th>
         <th class="admin-table-header">性別</th>

@@ -12,13 +12,6 @@ form {
     margin: 30px 0;
     display: flex;
 }
-.contact-label {
-    width: 30%;
-}
-
-.required {
-    color: rgb(250, 58, 100);
-}
 
 .contact-input {
     width: 70%;
@@ -28,33 +21,25 @@ form {
     row-gap: 0;
 }
 
+.contact-label {
+    width: 30%;
+}
+
+.required {
+    color: rgb(250, 58, 100);
+}
+
 .contact-input input,
 .contact-input select,
 .contact-input textarea {
     padding: 8px 30px;
-    color: #83746b;
-    border: none;
     background-color: #f4f4f4;
-
+    color: black;
+    border: none;
 }
-
-.contact-input input[type="radio"] {
-    width: auto;
-    background-color: transparent;
-    accent-color: #83746b;
-}
-
-.contact-input input[type="radio"]:focus {
-    outline: 2px solid #ffffff;
-}
-
-.contact-input .contact-category {
+.contact-input input::placeholder,
+.contact-input textarea::placeholder {
     color: #83746b;
-    opacity: 0.54;
-}
-
-.contact-input .contact-category.selected {
-    opacity: 1;
 }
 
 .contact-input input,
@@ -64,12 +49,25 @@ form {
 
 .contact-input input[type="radio"] {
     width: auto;
+    background-color: transparent;
+    accent-color: #83746b;
+}
+.contact-input input[type="radio"]:focus {
+    outline: 2px solid #ffffff;
+}
+
+.contact-input .contact-category {
+    color: #83746b;
+    opacity: 0.54;
+}
+.contact-input .contact-category.selected {
+    color: black;
+    opacity: 1;
 }
 
 .name-field {
     flex: 1;
 }
-
 .name-field input {
     width: 100%;
 }
@@ -87,7 +85,6 @@ form {
     display: flex;
     gap: 10px;
 }
-
 .tel-input {
     width: 100%;
     text-align: center;
@@ -105,7 +102,7 @@ form {
     width: 120px;
     height: 40px;
     background-color: #83746b;
-    color: #ffffff;
     border: none;
+    color: #ffffff;
     cursor: pointer;
 }

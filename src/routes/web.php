@@ -4,6 +4,12 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
+Route::post('/logout', function () {
+    auth()->logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('/login');
+})->name('logout');
 
 Route::get('/',[ContactController::class,'index'])->name('contact.index');
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
