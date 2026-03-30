@@ -15,10 +15,12 @@
 }
 
 
-/* 全ページ共通 */
+/* thanks以外の全ページ共通 */
 h1 {
+    margin: 0;
+    padding-top: 30px;
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
     color: #83746b;
     font-weight: normal;
     font-family: Georgia, 'Times New Roman', serif;
@@ -30,18 +32,17 @@ h1 {
     padding: 5px 15px;
     border: 1px solid #baa899;
     color: #baa899;
-    background-color: #f1ece6;
+    background-color: #f4f4f4;
     text-decoration: none;
-    font-family: Georgia, 'Times New Roman', serif;
     cursor: pointer;
+    font-family: Georgia, 'Times New Roman', serif;
 }
 
 .error-message {
     width: 100%;
-    color: red;
+    color: rgb(176, 0, 0);
     font-size: 12px;
     margin: 4px 0 0;
-    padding-left: 30px;
 }
 
 .visually-hidden {
@@ -50,4 +51,9 @@ h1 {
     height: 1px;
     overflow: hidden;
     clip: rect (0, 0, 0, 0);
+}
+
+button,
+a {
+    user-select: none;
 }

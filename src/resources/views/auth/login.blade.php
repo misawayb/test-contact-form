@@ -10,7 +10,7 @@
 
 @section('content')
 <h1>Login</h1>
-<div class="auth-card">
+<div class="card-login">
     <form action="/login" method="post">
         @csrf
         <div class="auth-field">

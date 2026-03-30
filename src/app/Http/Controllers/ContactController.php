@@ -20,6 +20,9 @@ class ContactController extends Controller
     }
 
     public function showConfirm(){
+        if (!session()->has('contact')) {
+            return redirect()->route('contact.index');
+        }
         $contact = session('contact');
         $genders = Contact::GENDERS;
         $tel = $contact['tel_1'] . $contact['tel_2'] . $contact['tel_3'];

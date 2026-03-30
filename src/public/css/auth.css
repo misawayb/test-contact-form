@@ -1,0 +1,53 @@
+main {
+    margin: 0;
+    background-color: #f1ece6;
+    height: 100vh;
+}
+
+.card-login,
+.card-register {
+    margin: 40px auto 0;
+    padding: 30px 70px;
+    width: 50%;
+    background-color: white;
+    border: 1px solid #baa899;
+    border-radius: 5px;
+}
+
+.card-login {
+    height: 55%;
+}
+.card-register {
+    height: 70%;
+}
+
+.auth-field {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto 20px;
+    color: #83746b;
+}
+
+.auth-title {
+    margin-bottom: 5px;
+}
+
+.auth-field input {
+    background-color: #f4f4f4;
+    border: none;
+    height: 2.5em;
+    padding-left: 20px;
+
+}
+
+.auth-button {
+    display: block;
+    margin: 30px auto;
+    width: 120px;
+    height: 40px;
+    background-color: #83746b;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}

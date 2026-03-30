@@ -1,0 +1,53 @@
+table {
+    width: 800px;
+    margin: 30px auto;
+}
+
+table ,
+.table-row {
+    border: 1px solid #f1ece6;
+}
+
+.table-row {
+    height: 4em;
+}
+
+.table-row:last-child {
+    height: 6em;
+}
+
+.table-title {
+    width: 35%;
+    background-color: #baa899;
+    color: white;
+    padding-left: 30px;
+}
+
+.table-data {
+    width: 65%;
+    padding-left: 25px;
+    color: #83746b;
+}
+
+.buttons {
+    position: relative;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.submit {
+    width: 120px;
+    height: 40px;
+    background-color: #83746b;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.back {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 20px;
+    color: #83746b;
+}

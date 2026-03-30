@@ -11,8 +11,10 @@
 
 <body>
     <p class="thanks-background">Thank you</p>
-    <p class="thanks-message">お問い合わせありがとうございました</p>
-    <a class="back-home" href="{{ route('contact.index') }}">HOME</a>
+    <div class="thanks-content">
+        <p class="thanks-message">お問い合わせありがとうございました</p>
+        <a class="back-home" href="{{ route('contact.index') }}">HOME</a>
+    </div>
 </body>
 
 </html>

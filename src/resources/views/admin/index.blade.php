@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+@endsection
+
 @section('header')
 <form action="{{ route('logout') }}" method="POST">
     @csrf
@@ -29,11 +33,17 @@
     <input class="search-date" type="date" name="date">
     <button class="search-button">検索</button>
     <a href="{{ route('admin.reset') }}" class="reset-button">リセット</a>
+    {{-- カレンダー強制表示 --}}
+    <script>
+        document.querySelector('.search-date').addEventListener('click', function() {
+            this.showPicker();
+        });
+    </script>
 </form>
 <div class="admin-actions">
-    <section class="export">エクスポート</section>
+    <a href="{{ route('admin.export') }}" class="export">エクスポート</a>
     <nav class="pagination">
-        {{ $contacts->links() }}
+        {{ $contacts->links('vendor.pagination.tailwind') }}
     </nav>
 </div>
 <table>
@@ -42,6 +52,7 @@
         <th class="admin-table-header">性別</th>
         <th class="admin-table-header">メールアドレス</th>
         <th class="admin-table-header">お問い合わせの種類</th>
+        <th></th>
     </tr>
     @foreach($contacts as $contact)
     <tr class="table-contacts">
@@ -64,12 +75,12 @@
                 data-id="{{ $contact->id }}">
                 詳細
             </button>
-
         </td>
     </tr>
     @endforeach
 </table>
 {{-- モーダル --}}
+<div class="overlay" id="overlay"></div>
 <div class="modal" id="modal">
     <button class="modal-close">✕</button>
     <table>
@@ -112,15 +123,6 @@
         <button class="delete-button">削除</button>
     </form>
 </div>
-<style>
-    .modal {
-        display: none;
-    }
-
-    .modal.active {
-        display: block;
-    }
-</style>
 <script>
     document.querySelectorAll('.modal-open').forEach(function(button) {
         button.addEventListener('click', function() {
@@ -138,11 +140,16 @@
             document.getElementById('modal-delete').action = '/delete/' + data.id;
 
             document.getElementById('modal').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
         });
     });
 
-    document.querySelector('.modal-close').addEventListener('click', function() {
+    function closeModal() {
         document.getElementById('modal').classList.remove('active');
-    });
+        document.getElementById('overlay').classList.remove('active');
+    }
+
+    document.querySelector('.modal-close').addEventListener('click', closeModal);
+    document.getElementById('overlay').addEventListener('click', closeModal);
 </script>
 @endsection

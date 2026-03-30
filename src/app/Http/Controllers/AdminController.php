@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function index(){
-        $contacts = Contact::simplePaginate(7);
+        $contacts = Contact::paginate(7);
         $genders = Contact::GENDERS;
         $categories = Category::all();
 

@@ -10,40 +10,40 @@
     @csrf
     <table>
         <tr class="table-row">
-            <th class="table-title">お名前</th>
-            <td class="table-input">{{ $contact['last_name'] }} {{ $contact['first_name'] }}</td>
+            <td class="table-title">お名前</td>
+            <td class="table-data">{{ $contact['last_name'] }} {{ $contact['first_name'] }}</td>
         </tr>
         <tr class="table-row">
-            <th class="table-title">性別</th>
-            <td class="table-input">{{ $genders[$contact['gender']] }}</td>
+            <td class="table-title">性別</td>
+            <td class="table-data">{{ $genders[$contact['gender']] }}</td>
         </tr>
         <tr class="table-row">
-            <th class="table-title">メールアドレス</th>
-            <td class="table-input">{{ $contact['email'] }}</td>
+            <td class="table-title">メールアドレス</td>
+            <td class="table-data">{{ $contact['email'] }}</td>
         </tr>
         <tr class="table-row">
-            <th class="table-title">電話番号</th>
-            <td class="table-input">{{ $tel }}</td>
+            <td class="table-title">電話番号</td>
+            <td class="table-data">{{ $tel }}</td>
         </tr>
         <tr class="table-row">
-            <th class="table-title">住所</th>
-            <td class="table-input">{{ $contact['address'] }}</td>
+            <td class="table-title">住所</td>
+            <td class="table-data">{{ $contact['address'] }}</td>
         </tr>
         <tr class="table-row">
-            <th class="table-title">建物名</th>
-            <td class="table-input">{{ $contact['building'] }}</td>
+            <td class="table-title">建物名</td>
+            <td class="table-data">{{ $contact['building'] }}</td>
         </tr>
         <tr class="table-row">
-            <th class="table-title">お問い合わせの種類</th>
-            <td class="table-input">{{ $category->content }}</td>
+            <td class="table-title">お問い合わせの種類</td>
+            <td class="table-data">{{ $category->content }}</td>
         </tr>
         <tr class="table-row">
-            <th class="table-title">お問い合わせ内容</th>
-            <td class="table-input">{{ $contact['detail'] }}</td>
+            <td class="table-title">お問い合わせ内容</td>
+            <td class="table-data">{{ $contact['detail'] }}</td>
         </tr>
     </table>
     <div class="buttons">
-        <input class="submit" type="submit">
+        <input class="submit" type="submit" value="送信">
         <a class="back" href="{{ route('contact.back') }}">修正</a>
     </div>
 </form>
